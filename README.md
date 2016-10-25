@@ -8,6 +8,7 @@
 - SpringMVC4.25
 - MyBatis3.3.0
 - Druid数据库连接池
+- Ehcache
 - sf4j日志
 - Quartz作业调度
 
