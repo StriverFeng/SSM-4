@@ -9,6 +9,7 @@
 - MyBatis3.3.0
 - Druid数据库连接池
 - sf4j日志
+- Quartz作业调度
 
 ###要求
 
@@ -18,8 +19,8 @@
 
 ###运行
 
-(1)git clone https://github.com/silence940109/SSM.git
+- git clone https://github.com/silence940109/SSM.git
 
-(2)cd SSM 
+- cd SSM 
 
-(3)gradle tomcatRun
+- gradle tomcatRun
