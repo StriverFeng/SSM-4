@@ -5,32 +5,53 @@
 	
 	<!-- 添加参与任务调度的bean对应的class -->
 	<bean id="myPrintTask" class="com.silence.ssm.quartz.schedule.MyPrintTask"></bean>
+	<bean id="taskJob" class="com.silence.ssm.quartz.schedule.TaskJob"></bean>
 	
 	<!-- 启动触发器的配置开始 -->
 	<bean name="startQuertz" lazy-init="false" autowire="no"
 		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="triggers">
 			<list>
-				<ref bean="myJobTrigger" />
+   			    <!-- 打印任務 -->
+				<ref bean="myPrintJobTrigger" />
+				<!-- 作業任務 -->
+				<ref bean="myTaskJobTrigger"/>
 			</list>
 		</property>
 	</bean>
 	<!-- 启动触发器的配置结束 -->
 
 	<!-- quartz-2.x的配置 -->
-	<bean id="myJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
-		<property name="jobDetail" ref="myJobDetail"></property>
+	<bean id="myPrintJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="myPrintJobDetail"></property>
 		<property name="cronExpression">
+			<!-- 每10秒鐘執行一次 -->
 			<value>0/10 * * * * ?</value>
 		</property>
 	</bean>
 	<!-- 调度的配置结束 -->
-
 	<!-- job的配置开始 -->
-	<bean id="myJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	<bean id="myPrintJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<property name="targetObject" ref="myPrintTask"></property>
 		<property name="targetMethod" value="execute"></property>
 	</bean>
 	<!-- job的配置结束 -->
 
+
+    <!-- quartz-2.x的配置 -->
+	<bean id="myTaskJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="myTaskJobDetail"></property>
+		<property name="cronExpression">
+			<!-- 每10秒鐘執行一次 -->
+			<value>0/5 * * * * ?</value>
+		</property>
+	</bean>
+	<!-- 调度的配置结束 -->
+	<!-- job的配置开始 -->
+	<bean id="myTaskJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="taskJob"></property>
+		<property name="targetMethod" value="run"></property>
+	</bean>
+	<!-- job的配置结束 -->
+	
 </beans>
