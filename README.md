@@ -7,16 +7,23 @@
 - Spring 4.25
 - SpringMVC4.25
 - MyBatis3.3.0
-- Druid数据库连接池
+- Freemarker
+- Druid数据库连接池(连接池监控)
+- Quartz2.1作业调度
+- Redis
 - Ehcache
 - sf4j日志
-- Quartz作业调度
 
 ###要求
 
 - Gradle 3.1
 - JDK 1.7+
 - Tomcat7+(关于gradle使用tomcat插件，你可以在[Gradle Tomcat plugin](https://plugins.gradle.org/plugin/com.bmuschko.tomcat))查看
+- MySQL5.5+
+
+###配置
+
+- 在src/main/resources/db.properties配置数据库信息
 
 ###运行
 
