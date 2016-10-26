@@ -18,27 +18,18 @@
 	<!-- 启动触发器的配置结束 -->
 
 	<!-- quartz-2.x的配置 -->
-	<bean id="myJobTrigger"
-		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
-		<property name="jobDetail">
-			<ref bean="myJobDetail" />
-		</property>
+	<bean id="myJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="myJobDetail"></property>
 		<property name="cronExpression">
-			<!--middle night 24. do it  -->
 			<value>0/10 * * * * ?</value>
 		</property>
 	</bean>
 	<!-- 调度的配置结束 -->
 
 	<!-- job的配置开始 -->
-	<bean id="myJobDetail"
-		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-		<property name="targetObject">
-			<ref bean="myPrintTask" />
-		</property>
-		<property name="targetMethod">
-			<value>execute</value>
-		</property>
+	<bean id="myJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myPrintTask"></property>
+		<property name="targetMethod" value="execute"></property>
 	</bean>
 	<!-- job的配置结束 -->
 
