@@ -10,9 +10,11 @@
 - Freemarker
 - Druid数据库连接池(连接池监控)
 - Quartz2.1作业调度
+- Lucene6.2.1全文信息检索
 - Redis
 - Ehcache
 - sf4j日志
+- Mysql
 
 ###要求
 
