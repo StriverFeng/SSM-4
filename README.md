@@ -24,6 +24,7 @@
 ###配置
 
 - 在src/main/resources/db.properties配置数据库信息
+- 在src/main/resources/spring-quartz-task.xml配置作业调度信息 
 
 ###运行
 
@@ -32,3 +33,5 @@
 - cd SSM 
 
 - gradle tomcatRun
+
+- 访问http://localhost:8080/SSM 
