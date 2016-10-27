@@ -25,8 +25,8 @@
 	<bean id="myPrintJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="myPrintJobDetail"></property>
 		<property name="cronExpression">
-			<!-- 每10秒鐘執行一次 -->
-			<value>0/10 * * * * ?</value>
+			<!-- 每60秒鐘執行一次 -->
+			<value>0/60 * * * * ?</value>
 		</property>
 	</bean>
 	<!-- 调度的配置结束 -->
@@ -42,8 +42,8 @@
 	<bean id="myTaskJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="myTaskJobDetail"></property>
 		<property name="cronExpression">
-			<!-- 每10秒鐘執行一次 -->
-			<value>0/5 * * * * ?</value>
+			<!-- 每50秒鐘執行一次 -->
+			<value>0/50 * * * * ?</value>
 		</property>
 	</bean>
 	<!-- 调度的配置结束 -->
