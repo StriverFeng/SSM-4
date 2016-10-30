@@ -13,7 +13,11 @@
 - Lucene6.2.1全文信息检索
 - Redis
 - Ehcache
-- sf4j日志
+- sf4j日志->log4j日志引擎
+- JUNIT单元测试
+- Strman-java字符处理
+- Tablesaw-伪“大数据”处理
+- Dex-数据可视化
 - Mysql
 
 ###要求
