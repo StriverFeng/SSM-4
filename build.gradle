@@ -1,6 +1,6 @@
 version '1.0-SNAPSHOT'
 apply plugin: 'java'
-apply plugin: 'war' //用来生成war
+apply plugin: 'war' //生成war
 apply plugin: "com.bmuschko.tomcat"
 apply plugin: 'war'
 version = '1.0' //property
@@ -42,7 +42,7 @@ dependencies {
     	exclude group:'c3p0',module:"c3p0"
     }
     compile 'org.apache.commons:commons-lang3:3.4'
-    compile 'com.alibaba:druid:1.0.18'
+    compile 'com.alibaba:druid:1.0.26'
     
     providedCompile "javax.servlet:javax.servlet-api:3.1.0"
     providedCompile "javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1"
