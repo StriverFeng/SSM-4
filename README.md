@@ -37,3 +37,14 @@
 - gradle tomcatRun
 
 - 访问http://localhost:8080/SSM 
+
+###详情
+####关于Alibaba Druid数据源监控配置
+关于Alibaba Druid数据源监控配置的信息详情，可以看
+[Alibaba Druid数据源监控配置](https://github.com/silence940109/Java/tree/master/Alibaba_Druid)这里
+
+运行结果
+
+![](https://github.com/silence940109/Java/blob/master/Alibaba_Druid/1.png)
+
+![](https://github.com/silence940109/Java/blob/master/Alibaba_Druid/2.png)
