@@ -41,6 +41,7 @@ dependencies {
         //排除c3p0的依赖
     	exclude group:'c3p0',module:"c3p0"
     }
+    compile 'org.mybatis.generator:mybatis-generator-core:1.3.5'
     compile 'org.apache.commons:commons-lang3:3.4'
     compile 'com.alibaba:druid:1.0.26'
     
