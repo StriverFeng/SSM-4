@@ -1,19 +1,19 @@
-
+da
 ##Gradle SpringMVC Mybatis构建web应用
 
 ###框架组成
 
 - Gradle
-- Spring 4.25
+- Spring 4.25 > finished
 - SpringMVC4.25
 - MyBatis3.3.0
 - Freemarker
-- Druid数据库连接池(连接池监控)
-- Quartz2.1作业调度
+- Druid数据库连接池(连接池监控) > finished
+- Quartz2.1作业调度 > finished
 - Lucene6.2.1全文信息检索
 - Redis
 - Ehcache
-- sf4j日志->log4j日志引擎
+- sf4j日志->log4j日志引擎 > finished
 - JUNIT单元测试
 - Strman-java字符处理
 - Tablesaw-伪“大数据”处理
