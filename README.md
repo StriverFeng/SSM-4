@@ -1,4 +1,3 @@
-da
 ##Gradle SpringMVC Mybatis构建web应用
 
 ###框架组成
@@ -12,12 +11,14 @@ da
 - Quartz2.1作业调度 > finished
 - Lucene6.2.1全文信息检索
 - Redis
+- Redis客户端开发包Jedis
 - Ehcache
 - sf4j日志->log4j日志引擎 > finished
 - JUNIT单元测试
 - Strman-java字符处理
 - Tablesaw-伪“大数据”处理
 - Dex-数据可视化
+- Fastjson > JSON处理器
 - Mysql
 
 ###要求
