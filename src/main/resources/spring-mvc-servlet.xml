@@ -22,4 +22,8 @@
 	<!-- 扫描controller层 -->
 	<context:component-scan base-package="com.silence.ssm.controller"></context:component-scan>
 	
+	<context:property-placeholder location="classpath:swagger.properties" />
+	  
+    <!-- <bean id="documentationConfig" class="com.mangofactory.swagger.configuration.DocumentationConfig" /> -->  
+	
 </beans>
