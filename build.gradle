@@ -69,7 +69,3 @@ dependencies {
            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
 }
 tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
-task hello << {
-    println "the current task name is ${System.env['java_home']}/../"
-    println "hello world"
-}
