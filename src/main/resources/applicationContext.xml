@@ -24,6 +24,7 @@
 		<!-- 排除由springMvc提供的Controller -->
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"  />
 		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+		<context:exclude-filter type="regex" expression="com.silence.ssm.config*" />
 	</context:component-scan>
 	
 	<!-- 配置数据源 -->
@@ -67,9 +68,9 @@
 	</bean>
 	
 	<!-- scan for mappers and let them be autowired, -->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<!-- basePackage指定要扫描的包，在此包之下的映射器都会被搜索到， 可指定多个包，包与包之间用逗号或分号分隔,‘**’路径通配符。 -->
+	<!-- <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		basePackage指定要扫描的包，在此包之下的映射器都会被搜索到， 可指定多个包，包与包之间用逗号或分号分隔,‘**’路径通配符。
 		<property name="basePackage" value="com.silence.ssm.**.dao" />
-	</bean>
+	</bean> -->
   	
 </beans>
