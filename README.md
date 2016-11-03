@@ -56,3 +56,12 @@
 ![](https://github.com/silence940109/Java/blob/master/Alibaba_Druid/1.png)
 
 ![](https://github.com/silence940109/Java/blob/master/Alibaba_Druid/2.png)
+
+####关于Swagger UI API测试
+系统已经集成了swagger，关于spring如何集成和配置swagger，请看[这里](https://github.com/silence940109/Java/tree/master/swagger)
+
+服务器运行起来后，你可以在浏览器中打开`http://localhost:8080/SSM/swagger/index.html`
+
+在输入框输入`http://localhost:8080/SSM/api-docs`,然后就可以看到以下的界面，你可以很方便的进行测试
+
+![](https://github.com/silence940109/Java/blob/master/swagger/image/index.png)
