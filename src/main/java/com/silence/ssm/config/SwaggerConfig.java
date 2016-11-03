@@ -40,7 +40,7 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo apiInfo() {
-		ApiInfo apiInfo = new ApiInfo("SSM Project", "Spring MVC Gradle Project", "developer: Silence",
+		ApiInfo apiInfo = new ApiInfo("SSM Project", "Swagger首页", "developer: Silence",
 				"silence940109@gmail.com", "MIT License", "/LICENSE");
 		return apiInfo;
 	}
