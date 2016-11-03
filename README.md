@@ -4,21 +4,23 @@
 
 - Gradle
 - Spring 4.25 > finished
+- Scala
+- Spark
 - SpringMVC4.25
 - MyBatis3.3.0
 - Freemarker
-- Druid数据库连接池(连接池监控) > finished
+- Druid数据库连接池(连接池监控) > finished > 2016-10-26
 - Quartz2.1作业调度 > finished
 - Lucene6.2.1全文信息检索
 - Redis
 - Redis客户端开发包Jedis
 - Ehcache
-- sf4j日志->log4j日志引擎 > finished
+- sf4j日志->log4j日志引擎 > finished > 2016-10-20
 - JUNIT单元测试
 - Strman-java字符处理
 - Tablesaw-伪“大数据”处理
 - Dex-数据可视化
-- Swagger > API文档
+- Swagger > API文档 > RESTFUL API TEST > finished 2016-11-03
 - Fastjson > JSON处理器
 - Mysql
 
