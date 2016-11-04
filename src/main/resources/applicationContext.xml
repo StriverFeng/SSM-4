@@ -64,7 +64,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:myBatisConfig.xml" />
 		<!-- 自动扫描entity目录，省略Configuration.xml(核心配置文件)里手工配置， 可指定多个包，包与包之间用逗号或分号分隔,‘**’路径通配符 。 -->
-		<property name="mapperLocations" value="classpath:com/silence/ssm/mapping/*.xml" />
+		<!-- <property name="mapperLocations" value="classpath:com/silence/ssm/mapping/*.xml" /> -->
 	</bean>
 	
 	<!-- scan for mappers and let them be autowired, -->
