@@ -5,9 +5,6 @@ apply plugin: 'war'
 version = '1.0' //property
 apply plugin: 'org.akhikhl.gretty'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 buildscript {
   repositories {
     jcenter()
@@ -71,10 +68,4 @@ tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
 tasks.withType(JavaCompile) {
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
-}
-task myTask {
-  inputs.files 'src'
-  doLast {
-    println 'this is hot deployment'
-  }
 }
