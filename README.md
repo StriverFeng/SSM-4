@@ -2,8 +2,9 @@
 
 ###框架组成
 
-- Gradle > finished > 2016-10-23
-- Spring 4.25 > finished
+- Gradle > init project > finished > 2016-10-23
+- Gretty > Server hot deploy > tomcat热部署方案 > finished > 2016-11-05
+- Spring 4.25 > finished > 2016-10-23
 - Scala 2.1
 - Spark 2.0.0
 - SpringMVC4.25 > finished > 2016-10-25
@@ -43,13 +44,21 @@
 
 - cd SSM 
 
-- gradle tomcatRun
+- gradle appRun
 
 - 访问http://localhost:8080/SSM 
 
 ###详情
+
+####关于Gretty插件配置热部署方案，请看[这里](https://github.com/silence940109/Java/blob/master/Gradle_Gretty)
+
+![](https://github.com/silence940109/Java/blob/master/Gradle_Gretty/image/1.png)
+
 ####关于Alibaba Druid数据源监控配置
 关于Alibaba Druid数据源监控配置的信息详情，可以看
+
+在web.xml中配置druid入口的用户名和密码
+
 [Alibaba Druid数据源监控配置](https://github.com/silence940109/Java/tree/master/Alibaba_Druid)这里
 
 运行结果
