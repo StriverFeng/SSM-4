@@ -2,15 +2,15 @@
 
 ###框架组成
 
-- Gradle
+- Gradle > finished > 2016-10-23
 - Spring 4.25 > finished
-- Scala
-- Spark
-- SpringMVC4.25
+- Scala 2.1
+- Spark 2.0.0
+- SpringMVC4.25 > finished > 2016-10-25
 - MyBatis3.3.0
 - Freemarker
 - Druid数据库连接池(连接池监控) > finished > 2016-10-26
-- Quartz2.1作业调度 > finished
+- Quartz2.1作业调度 > finished > 2016-10-27
 - Lucene6.2.1全文信息检索
 - Redis
 - Redis客户端开发包Jedis
@@ -28,6 +28,7 @@
 
 - Gradle 3.1
 - JDK 1.7+
+- Scala 2.1+
 - Tomcat7+(关于gradle使用tomcat插件，你可以在[Gradle Tomcat plugin](https://plugins.gradle.org/plugin/com.bmuschko.tomcat))查看
 - MySQL5.5+
 
