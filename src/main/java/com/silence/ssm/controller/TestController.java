@@ -27,14 +27,14 @@ public class TestController {
     @ApiOperation(value = "添加用户", httpMethod = "POST", response = String.class, notes = "add user")
     public String addUser(@ApiParam(required = true, name = "postData", value = "用户信息json数据") @RequestParam(
             value = "postData") String postData, HttpServletRequest request){
-    	LOGGER.info("test Controller addUser mapping");
-    	return "123";
+    	LOGGER.info("test Controller addUser mapping...");
+    	return "123456";
     }
     
     @ResponseBody
     @ApiOperation(value = "获取书本内容", notes = "获取书本内容")
     @RequestMapping(value = "/getBookListByFilter", method = RequestMethod.POST)
-    public void getBookListByFilter(HttpServletResponse response, HttpServletRequest request, @ApiParam(value = "机器序列号")
+    public String getBookListByFilter(HttpServletResponse response, HttpServletRequest request, @ApiParam(value = "机器序列号")
     @RequestParam(value = "machineId", required = true)
     String machineId, @ApiParam(value = "教材id")
     @RequestParam(value = "materialId", required = true)
@@ -43,6 +43,20 @@ public class TestController {
     String accountId, @ApiParam(value = "年级id")
     @RequestParam(value = "gradeId", required = true)
     String gradeId){
-    	
+    	return "test";
+    }
+    
+    @ResponseBody
+    @ApiOperation(value = "test1", notes = "test1")
+    @RequestMapping(value="/test1",method=RequestMethod.POST)
+    public void test(){
+    	LOGGER.info("123");
+    }
+    
+    @ResponseBody
+    @ApiOperation(value = "test2", notes = "test2")
+    @RequestMapping(value="/test2",method=RequestMethod.POST)
+    public void test1(){
+    	LOGGER.info("123");
     }
 }

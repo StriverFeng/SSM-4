@@ -10,6 +10,6 @@ public class MyPrintTask {
 	private static final Logger LOGGER = LoggerFactory.getLogger(MyPrintTask.class);
 	
 	public void execute(){
-		LOGGER.debug("There is quartz schedule,every 60 seconds executing one time，today is " + new Date());
+		LOGGER.info("There is quartz schedule,every 60 seconds executing one time，today is " + new Date());
 	}
 }
