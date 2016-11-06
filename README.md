@@ -32,7 +32,6 @@
 - Spark2.0.0
 - JDK 1.7+
 - Scala 2.1+
-- Gretty服务器热部署
 - Tomcat7+(关于gradle使用tomcat插件，你可以在[Gradle Tomcat plugin](https://plugins.gradle.org/plugin/com.bmuschko.tomcat))查看
 - MySQL5.5+
 
@@ -51,6 +50,10 @@
 
 - 访问http://localhost:8080/SSM 
 
+- swagger-ui访问http://localhost:8080/SSM/swagger/index.html
+
+- 阿里巴巴Druid数据源http://localhost:8080/SSM/druid
+
 ###详情
 
 ####关于Java和Scala代码同时编译，以及spring mvc集成Scala问题，2016-11-06日完成,如下图，详细信息会在后面写出：
@@ -59,8 +62,6 @@
 
 spring mvc和scala集成测试代码
 
-	package com.silence.ssm.scala.controller
-	
 	import org.springframework.stereotype.Controller
 	import org.springframework.web.bind.annotation.RequestMapping
 	import org.springframework.web.bind.annotation.RequestMethod
@@ -91,9 +92,9 @@ spring mvc和scala集成测试代码
 ####关于Alibaba Druid数据源监控配置
 关于Alibaba Druid数据源监控配置的信息详情，可以看
 
-在web.xml中配置druid入口的用户名和密码
+在web.xml中配置druid入口的用户名和密码，用户名和密码都配为druid
 
-[Alibaba Druid数据源监控配置](https://github.com/silence940109/Java/tree/master/Alibaba_Druid)这里
+关于[Alibaba Druid数据源监控配置](https://github.com/silence940109/Java/tree/master/Alibaba_Druid)
 
 运行结果
 
