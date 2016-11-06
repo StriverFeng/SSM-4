@@ -1,7 +1,7 @@
 version '1.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'war' //生成war
-apply plugin: 'war'
+apply plugin: 'scala'
 version = '1.0' //property
 apply plugin: 'org.akhikhl.gretty'
 
@@ -20,7 +20,25 @@ gretty {
 repositories {
     jcenter()
 }
+sourceSets {
+    main {
+        scala {
+            srcDirs = ['src/main/scala', 'src/main/java']
+        }
+        java {
+            srcDirs = []
+        }
+    }
 
+    test {
+        scala {
+            srcDirs = ['src/test/scala', 'src/test/java']
+        }
+        java {
+            srcDirs = []
+        }
+    }
+}
 dependencies {
 	//junit
     testCompile 'junit:junit:4.12'
@@ -62,9 +80,13 @@ dependencies {
     providedCompile "javax.servlet:javax.servlet-api:3.1.0"
     //jstl
     providedCompile "javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1"
-
+    //scala
+    compile "org.scala-lang:scala-library:2.11.7"
+    compile "org.scala-lang:scala-compiler:2.11.7"
+    compile "org.scala-lang:scala-reflect:2.11.7"
 }
 tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
+tasks.withType(ScalaCompile) { options.encoding = "UTF-8" }
 tasks.withType(JavaCompile) {
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
