@@ -2,15 +2,15 @@
 
 ###框架组成
 
-- Gradle > init project > finished > 2016-10-23
-- Gretty > Server hot deploy > tomcat热部署方案 > finished > 2016-11-05
+- Gradle > [init project](https://github.com/silence940109/Java/tree/master/Gradle_STS_Create) > finished > 2016-10-23
+- Gretty > Server hot deploy > [tomcat热部署方案](https://github.com/silence940109/Java/tree/master/Gradle_Gretty) > finished > 2016-11-05
 - Spring 4.25 > finished > 2016-10-23
 - Scala 2.1
 - Spark 2.0.0
 - SpringMVC4.25 > finished > 2016-10-25
 - MyBatis3.3.0
 - Freemarker
-- Druid数据库连接池(连接池监控) > finished > 2016-10-26
+- Druid数据库连接池(连接池监控) > [Spring Druid](https://github.com/silence940109/Java/tree/master/Alibaba_Druid) > finished > 2016-10-26
 - Quartz2.1作业调度 > finished > 2016-10-27
 - Lucene6.2.1全文信息检索
 - Redis
