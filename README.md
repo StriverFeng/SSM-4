@@ -55,7 +55,7 @@
 
 ####关于Java和Scala代码同时编译，以及spring mvc集成Scala问题，2016-11-06日完成,如下图，详细信息会在后面写出：
 
-![](http://localhost:8080/SSM/swagger/index.html#!/testScalaController%2Ftest/testScalaController)
+![](https://github.com/silence940109/Java/blob/master/SpringMVC_Scala/image/index.png)
 
 spring mvc和scala集成测试代码
 
