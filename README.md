@@ -1,18 +1,19 @@
-##Gradle SpringMVC Mybatis构建web应用
+##Gradle+Scala+Java+SpringMVC Web应用解决方案
 
-###框架组成
+###框架组成(Project Architecture)
 
 - Gradle > [init project](https://github.com/silence940109/Java/tree/master/Gradle_STS_Create) > finished > 2016-10-23
-- Gretty > Server hot deploy > [tomcat热部署方案](https://github.com/silence940109/Java/tree/master/Gradle_Gretty) > finished > 2016-11-05
-- Spring 4.25 > finished > 2016-10-23
-- Scala 2.1 > finished > 2016-11-06
+- Gretty Integration> Server Hot Deploy Scheme> [tomcat热部署方案](https://github.com/silence940109/Java/tree/master/Gradle_Gretty) > finished > 2016-11-05
+- Spring 4.25 Integration > finished > 2016-10-23
+- Scala 2.1 > Scala Java Compile At The Same Time > finished > 2016-11-06
 - Spark 2.0.0 > 服务器平台搭建 > finished > 2016-11-04
 - Spark 2.0.0 任务提交
+- WebSocket API > Support Communication
 - SpringMVC4.25 > finished > 2016-10-25
 - MyBatis3.3.0
 - Freemarker
 - Druid数据库连接池(连接池监控) > [Spring Druid](https://github.com/silence940109/Java/tree/master/Alibaba_Druid) > finished > 2016-10-26
-- Quartz2.1作业调度 > finished > 2016-10-27
+- Quartz2.1 > Job Schedule > finished > 2016-10-27
 - Lucene6.2.1全文信息检索
 - Redis
 - Redis客户端开发包Jedis
@@ -24,15 +25,15 @@
 - Dex-数据可视化
 - Swagger > API文档 > RESTFUL API TEST > finished 2016-11-03
 - Fastjson > JSON处理器
-- Mysql
+- Mysql5.6 > finished > 2016-10-24
 
 ###要求
 
 - Gradle 3.1
 - Spark2.0.0
-- JDK 1.7+
+- JDK 1.8+
 - Scala 2.1+
-- Tomcat7+(关于gradle使用tomcat插件，你可以在[Gradle Tomcat plugin](https://plugins.gradle.org/plugin/com.bmuschko.tomcat))查看
+- Tomcat8+(关于gradle使用tomcat插件，你可以在[Gradle Tomcat plugin](https://plugins.gradle.org/plugin/com.bmuschko.tomcat))查看
 - MySQL5.5+
 
 ###配置
