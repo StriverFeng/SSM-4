@@ -17,11 +17,27 @@ import org.springframework.beans.factory.annotation.Autowired
 class Test1 @Autowired()(scalaTestService:ScalaTestService){
   
   @ResponseBody
-  @ApiOperation(value = "测试Scala", httpMethod = "GET", notes = "testScala")
-  @RequestMapping(value=Array{"/test"},method=Array{RequestMethod.GET})
-  def test(@ApiParam(required = true, name = "name", value = "用户姓名") @RequestParam(
-            value = "postData") name:String):String = {
+  @ApiOperation(value = "测试Scala1", httpMethod = "GET", notes = "testScala1")
+  @RequestMapping(value=Array{"/test1"},method=Array{RequestMethod.GET})
+  def test1(@ApiParam(required = true, name = "name", value = "用户姓名") @RequestParam(value = "name") name:String):String = {
      println(scalaTestService.execute("value"))
     "this is scala controller test"
   }
+  
+  @ResponseBody
+  @ApiOperation(value = "测试Scala2", httpMethod = "POST", notes = "testScala2")
+  @RequestMapping(value=Array{"/test2"},method=Array{RequestMethod.POST})
+  def test2(@ApiParam(required = true, name = "name", value = "用户姓名") @RequestParam(value = "name") name:String):String = {
+     println(scalaTestService.execute("value"))
+    "this is scala controller test"
+  }
+  
+  @ResponseBody
+  @ApiOperation(value = "测试Scala3", httpMethod = "DELETE", notes = "testScala3")
+  @RequestMapping(value=Array{"/test3"},method=Array{RequestMethod.DELETE})
+  def test3(@ApiParam(required = true, name = "name", value = "用户姓名") @RequestParam(value = "name") name:String):String = {
+     println(scalaTestService.execute("value"))
+    "this is scala controller test"
+  }
+    
 }

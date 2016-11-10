@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 class ScalaTestService {
   
   def execute(name:String) : String = {
-     "Service module return data" 
+     "Scala test service module return data" 
   }
   
 }
