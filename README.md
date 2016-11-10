@@ -47,13 +47,25 @@
 
 - cd SSM 
 
-- gradle appRun
+- gradle -t appRun
 
 - 访问http://localhost:8080/SSM 
 
 - swagger-ui访问http://localhost:8080/SSM/swagger/index.html
 
 - 阿里巴巴Druid数据源http://localhost:8080/SSM/druid
+
+###打包到自己服务器
+
+- git clone https://github.com/silence940109/SSM.git
+
+- cd SSM
+
+- gradle buile
+
+- 在./build/libs/SSM-*.war生成经过编译好的war包
+
+- 丢到你自己的服务器即可
 
 ###详情
 
@@ -69,11 +81,13 @@ spring mvc和scala集成测试代码
 	import com.wordnik.swagger.annotations.Api
 	import org.springframework.web.bind.annotation.ResponseBody
 	import com.wordnik.swagger.annotations.ApiOperation
-	
+	import com.silence.ssm.scala.service.ScalaTestService
+	import com.wordnik.swagger.annotations.ApiParam
+	import org.springframework.beans.factory.annotation.Autowired
 	@Api(value = "testScalaController", description = "测试scala")
 	@Controller
 	@RequestMapping(value=Array {"/testScalaController"})
-	class Test1 {
+	class Test1 @Autowired()(scalaTestService:ScalaTestService){
 	  
 	  @ResponseBody
 	  @RequestMapping(value=Array {"test"},method=Array{RequestMethod.GET})
@@ -84,7 +98,17 @@ spring mvc和scala集成测试代码
 	  }
 	}
 
-关于改代码和swagger-ui集成还有点小bug，会在将来完善
+Scala Service
+
+	import org.springframework.stereotype.Service
+	
+	@Service("scalaTestService")
+	class ScalaTestService {
+	  
+	  def execute(name:String) : String = {
+	     "Scala test service module return data" 
+	  }
+	}
 
 ####关于Gretty插件配置热部署方案，请看[这里](https://github.com/silence940109/Java/blob/master/Gradle_Gretty)
 
