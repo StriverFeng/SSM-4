@@ -10,6 +10,7 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.2.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
 		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.2.xsd
@@ -17,6 +18,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
 		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.2.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
 	<!-- 配置自动扫描的包 -->
@@ -91,13 +93,21 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:myBatisConfig.xml" />
 		<!-- 自动扫描entity目录，省略Configuration.xml(核心配置文件)里手工配置， 可指定多个包，包与包之间用逗号或分号分隔,‘**’路径通配符 。 -->
-		<!-- <property name="mapperLocations" value="classpath:com/silence/ssm/mapping/*.xml" /> -->
+		<property name="mapperLocations" value="classpath:com/silence/ssm/mapping/*.xml" />
 	</bean>
 	
 	<!-- scan for mappers and let them be autowired, -->
-	<!-- <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		basePackage指定要扫描的包，在此包之下的映射器都会被搜索到， 可指定多个包，包与包之间用逗号或分号分隔,‘**’路径通配符。
-		<property name="basePackage" value="com.silence.ssm.**.dao" />
-	</bean> -->
-  	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!--  basePackage指定要扫描的包，在此包之下的映射器都会被搜索到， 可指定多个包，包与包之间用逗号或分号分隔,‘**’路径通配符。 -->
+		<property name="basePackage" value="com.silence.ssm.mapper" />
+		<property name="sqlSessionFactoryBeanName" ref="sqlSessionFactory"></property>
+	</bean>
+  	 <!-- 事务 -->  
+ 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+  		<property name="dataSource" ref="dataSource" />  
+ 	</bean>  
+   
+ 	<!-- 开启注解事务 -->  
+ 	<tx:annotation-driven transaction-manager="transactionManager" />
+ 	  
 </beans>
