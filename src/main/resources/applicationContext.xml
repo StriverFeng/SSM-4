@@ -19,7 +19,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
-		<!-- 配置自动扫描的包 -->
+	<!-- 配置自动扫描的包 -->
 	<context:component-scan base-package="com.silence.ssm">
 		<!-- 排除由springMvc提供的Controller -->
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"  />
@@ -27,9 +27,19 @@
 		<context:exclude-filter type="regex" expression="com.silence.ssm.config*" />
 	</context:component-scan>
 	
-	<!-- 配置数据源 -->
-	<context:property-placeholder location="classpath:db.properties" />
-	
+	<!-- 将多个配置文件读取到容器中，交给Spring管理 -->  
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+        <property name="locations">  
+           <list>
+           		<!-- 数据库配置文件 -->  
+           		<value>classpath:db.properties</value>  
+			  	<!-- redis参数配置 -->
+              	<value>classpath:redis.properties</value>  
+            </list>  
+        </property>  
+    </bean>
+     
+    <!-- 配置数据源 -->
 	<bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
 	    <property name="driverClassName" value="${driver}" />
 	    <property name="url" value="${url}" />
@@ -58,6 +68,23 @@
         <!-- 配置监控统计拦截的filters -->
         <property name="filters" value="stat" /> 
   	</bean>
+  	<!-- redis配置信息 -->
+  	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+  		<!--最大能够保持idel状态的对象数-->
+	  	<property name="maxIdle" value="300"/>
+	  	<!--最大分配的对象数-->
+        <property name="maxTotal" value="60000"/>
+        <!--当调用borrow Oject方法时，是否进行有效性检查-->
+        <property name="testOnBorrow" value="true"/>
+  	</bean>
+  	<!-- Redis数据源的配置 -->
+  	 <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg index="0" ref="jedisPoolConfig"/>
+        <constructor-arg index="1" value="${redis.host}"/>
+        <constructor-arg index="2" value="${redis.port}" type="int"/>
+        <constructor-arg index="3" value="${redis.timeout}" type="int"/>
+        <constructor-arg index="4" value="${redis.auth}"/>
+    </bean>
   	
   	<!-- mybatis的SqlSessionFactoryBean用于进行数据库操作 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
