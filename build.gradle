@@ -52,6 +52,8 @@ dependencies {
     compile 'org.springframework:spring-aop:4.2.5.RELEASE'
     compile 'org.springframework:spring-jdbc:4.2.5.RELEASE'
     compile 'org.springframework:spring-tx:4.2.5.RELEASE'
+    compile 'org.springframework:spring-websocket:4.2.5.RELEASE'
+    compile 'org.springframework:spring-messaging:4.2.5.RELEASE'
     //freeemarket
     compile 'org.freemarker:freemarker:2.3.23'
     //mysql driver
@@ -84,6 +86,8 @@ dependencies {
     compile "org.scala-lang:scala-library:2.11.7"
     compile "org.scala-lang:scala-compiler:2.11.7"
     compile "org.scala-lang:scala-reflect:2.11.7"
+    //jedis
+    compile "redis.clients:jedis:2.9.0"
 }
 tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
 tasks.withType(ScalaCompile) { options.encoding = "UTF-8" }
