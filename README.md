@@ -38,7 +38,8 @@
 - JDK 1.8+
 - Scala 2.1+
 - Tomcat8+(关于gradle使用tomcat插件，你可以在[Gradle Tomcat plugin](https://plugins.gradle.org/plugin/com.bmuschko.tomcat))查看
-- MySQL5.5+
+- MySQL5.1+
+- IDE > STS
 
 ###配置
 
@@ -146,6 +147,8 @@ Scala Service
 在输入框输入`http://localhost:8080/SSM/api-docs`,然后就可以看到以下的界面，你可以很方便的进行测试
 
 ![](https://github.com/silence940109/Java/blob/master/swagger/image/index.png)
+
+![](https://github.com/silence940109/Java/blob/master/swagger/image/swagger-request.png)
 
 <br>
 <br>
