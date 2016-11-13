@@ -5,18 +5,22 @@
 - Gradle > [init project](https://github.com/silence940109/Java/tree/master/Gradle_STS_Create) > finished > 2016-10-23
 - Gretty Integration> Server Hot Deploy Scheme> [tomcat热部署方案](https://github.com/silence940109/Java/tree/master/Gradle_Gretty) > finished > 2016-11-05
 - Spring 4.25 Integration > finished > 2016-10-23
+- Spring Session
+- Spring Security
 - Scala 2.1 > Scala Java Compile At The Same Time > finished > 2016-11-06
 - Spark 2.0.0 > 服务器平台搭建 > finished > 2016-11-04
+- Spring-Aspects Transaction > finished > 2016-11-13
 - Spark 2.0.0 任务提交
-- WebSocket API > Support Communication
+- Spring WebSocket API > Support Push Notification
 - SpringMVC4.25 > finished > 2016-10-25
-- MyBatis3.3.0
+- MyBatis3.3.0 > finished > 2016-11-13
+- Mybatis Generator > 自动生成配置文件 > finished > 2016-11-13
 - Freemarker
 - Druid数据库连接池(连接池监控) > [Spring Druid](https://github.com/silence940109/Java/tree/master/Alibaba_Druid) > finished > 2016-10-26
 - Quartz2.1 > Job Schedule > finished > 2016-10-27
 - Lucene6.2.1全文信息检索
-- Redis
-- Redis客户端开发包Jedis
+- Redis > finished > 2016-11-12
+- Redis客户端开发包Jedis > finished > 2016-11-12
 - Ehcache
 - sf4j日志->log4j日志引擎 > finished > 2016-10-20
 - JUNIT单元测试
@@ -68,7 +72,8 @@
 - 丢到你自己的服务器即可
 
 ###详情
-
+<br>
+<br>
 ####关于Java和Scala代码同时编译，以及spring mvc集成Scala问题，2016-11-06日完成,如下图，详细信息会在后面写出：
 
 ![](https://github.com/silence940109/Java/blob/master/SpringMVC_Scala/image/index.png)
@@ -110,10 +115,14 @@ Scala Service
 	  }
 	}
 
+<br>
+<br>
 ####关于Gretty插件配置热部署方案，请看[这里](https://github.com/silence940109/Java/blob/master/Gradle_Gretty)
 
 ![](https://github.com/silence940109/Java/blob/master/Gradle_Gretty/image/1.png)
 
+<br>
+<br>
 ####关于Alibaba Druid数据源监控配置
 关于Alibaba Druid数据源监控配置的信息详情，可以看
 
@@ -127,6 +136,8 @@ Scala Service
 
 ![](https://github.com/silence940109/Java/blob/master/Alibaba_Druid/2.png)
 
+<br>
+<br>
 ####关于Swagger UI API测试
 系统已经集成了swagger，关于spring如何集成和配置swagger，请看[这里](https://github.com/silence940109/Java/tree/master/swagger)
 
@@ -135,3 +146,37 @@ Scala Service
 在输入框输入`http://localhost:8080/SSM/api-docs`,然后就可以看到以下的界面，你可以很方便的进行测试
 
 ![](https://github.com/silence940109/Java/blob/master/swagger/image/index.png)
+
+<br>
+<br>
+###关于Mybatis Generator自动生成配置文件,[具体配置过程](https://github.com/silence940109/Mybatis)
+在/src/resources/generatorConfig.xml文件中
+
+1.修改数据库驱动本地路径
+
+	<classPathEntry location="D:\mavenRepository\mysql\mysql-connector-java\5.1.30\mysql-connector-java-5.1.30.jar" />
+
+2.修改需要生成配置文件的数据库信息
+
+	<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+		connectionURL="jdbc:mysql://localhost:3306/ssm?characterEncoding=utf8"
+		userId="root" password="root">
+	</jdbcConnection>
+
+3.需要生成哪些表的配置信息
+
+	<!-- 要对那些数据表进行生成操作，必须要有一个. -->
+	<table schema="mybatis" tableName="article" domainObjectName="Article"
+		enableCountByExample="false" enableUpdateByExample="false"
+		enableDeleteByExample="false" enableSelectByExample="false"
+		selectByExampleQueryId="false">
+	</table>
+			<table schema="mybatis" tableName="user" domainObjectName="User"
+		enableCountByExample="false" enableUpdateByExample="false"
+		enableDeleteByExample="false" enableSelectByExample="false"
+		selectByExampleQueryId="false">
+	</table>
+
+4.执行以下命令生成
+
+	gradle test
