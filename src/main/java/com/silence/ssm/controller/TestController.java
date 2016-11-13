@@ -12,15 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.silence.ssm.entity.User;
-import com.silence.ssm.mapper.UserMapper;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
 
 import redis.clients.jedis.JedisPool;
 
-@Api(value = "testController", description = "測試")
+@Api(value = "testController", description = "测试")
 @RequestMapping("/test")
 @Controller
 public class TestController {
@@ -28,9 +26,6 @@ public class TestController {
 	private static final Logger logger = LoggerFactory.getLogger(TestController.class);
 
 	@Autowired private JedisPool jedisPool;
-	
-	@Autowired private UserMapper userMapper;
-	
 	
 	@ResponseBody
 	@RequestMapping(value = "addUser", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
@@ -54,14 +49,6 @@ public class TestController {
 			@ApiParam(value = "用户id") @RequestParam(value = "accountId", required = false) String accountId,
 			@ApiParam(value = "年级id") @RequestParam(value = "gradeId", required = true) String gradeId) {
 		return "test123";
-	}
-
-	@ResponseBody
-	@ApiOperation(value = "testUserMapper", notes = "testUserMapper")
-	@RequestMapping(value = "/testUserMapper", method = RequestMethod.GET)
-	public void testUserMapper() {
-		logger.info("123");
-		userMapper.insert(new User("silence", "123456", "15367959781", "/upload/fsdflhdsf123213ofd.png", "walking in the sun"));
 	}
 
 	@ResponseBody

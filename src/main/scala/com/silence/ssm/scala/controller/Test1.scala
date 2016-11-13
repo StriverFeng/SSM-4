@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired
 
 @Api(value = "ScalaController", description = "测试scala")
 @Controller
-@RequestMapping(value=Array {"/testScalaController"})
+@RequestMapping(value=Array {"/scala"})
 class Test1 @Autowired()(scalaTestService:ScalaTestService){
   
   @ResponseBody
