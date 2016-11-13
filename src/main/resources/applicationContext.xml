@@ -89,18 +89,17 @@
     </bean>
   	
   	<!-- mybatis的SqlSessionFactoryBean用于进行数据库操作 -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<bean id="sqlSessionFactory_system" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:myBatisConfig.xml" />
-		<!-- 自动扫描entity目录，省略Configuration.xml(核心配置文件)里手工配置， 可指定多个包，包与包之间用逗号或分号分隔,‘**’路径通配符 。 -->
-		<property name="mapperLocations" value="classpath:com/silence/ssm/mapping/*.xml" />
+ 		<!-- 自动扫描entity目录，省略Configuration.xml(核心配置文件)里手工配置， 可指定多个包，包与包之间用逗号或分号分隔,‘**’路径通配符 。 -->
+		<property name="mapperLocations" value="classpath:mybatis/*.xml" />
 	</bean>
 	
 	<!-- scan for mappers and let them be autowired, -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<!--  basePackage指定要扫描的包，在此包之下的映射器都会被搜索到， 可指定多个包，包与包之间用逗号或分号分隔,‘**’路径通配符。 -->
+		<!-- basePackage指定要扫描的包，在此包之下的映射器都会被搜索到， 可指定多个包，包与包之间用逗号或分号分隔,‘**’路径通配符。 -->
 		<property name="basePackage" value="com.silence.ssm.mapper" />
-		<property name="sqlSessionFactoryBeanName" ref="sqlSessionFactory"></property>
 	</bean>
   	 <!-- 事务 -->  
  	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
@@ -108,6 +107,35 @@
  	</bean>  
    
  	<!-- 开启注解事务 -->  
- 	<tx:annotation-driven transaction-manager="transactionManager" />
+ 	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
+ 	
+ 	<!-- 拦截器方式配置事物 -->
+    <tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="add*" propagation="REQUIRED" />
+            <tx:method name="append*" propagation="REQUIRED" />
+            <tx:method name="insert*" propagation="REQUIRED" />
+            <tx:method name="save*" propagation="REQUIRED" />
+            <tx:method name="update*" propagation="REQUIRED" />
+            <tx:method name="modify*" propagation="REQUIRED" />
+            <tx:method name="edit*" propagation="REQUIRED" />
+            <tx:method name="delete*" propagation="REQUIRED" />
+            <tx:method name="remove*" propagation="REQUIRED" />
+            <tx:method name="repair" propagation="REQUIRED" />
+            <tx:method name="delAndRepair" propagation="REQUIRED" />
+
+            <tx:method name="get*" propagation="SUPPORTS" />
+            <tx:method name="find*" propagation="SUPPORTS" />
+            <tx:method name="load*" propagation="SUPPORTS" />
+            <tx:method name="search*" propagation="SUPPORTS" />
+            <tx:method name="datagrid*" propagation="SUPPORTS" />
+
+            <tx:method name="*" propagation="SUPPORTS" />
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:pointcut id="transactionPointcut" expression="execution(* com.silence.ssm.service..*Impl.*(..))" />
+        <aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice" />
+    </aop:config>
  	  
 </beans>
