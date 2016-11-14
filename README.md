@@ -28,8 +28,8 @@
 - Tablesaw-伪“大数据”处理
 - Dex-数据可视化
 - Swagger > API文档 > RESTFUL API TEST > finished 2016-11-03
-- Fastjson > JSON处理器
-- Mysql5.6 > finished > 2016-10-24
+- Alibaba Fastjson > [More Info](https://github.com/alibaba/fastjson) > finished > 2016--11-14
+- Mysql5.1 > finished > 2016-10-24
 
 ###要求
 
