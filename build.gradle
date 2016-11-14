@@ -94,6 +94,8 @@ dependencies {
     compile "org.scala-lang:scala-reflect:2.11.7"
     //jedis
     compile "redis.clients:jedis:2.9.0"
+    //fastjson
+    compile 'com.alibaba:fastjson:1.2.21'
 }
 tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
 tasks.withType(ScalaCompile) { options.encoding = "UTF-8" }
