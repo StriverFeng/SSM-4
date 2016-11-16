@@ -23,7 +23,7 @@
 - Redis客户端开发包Jedis > finished > 2016-11-12
 - Ehcache
 - sf4j日志->log4j日志引擎 > finished > 2016-10-20
-- JUNIT单元测试
+- Gradle Spring Junit单元测试
 - Strman-java字符处理
 - Tablesaw-伪“大数据”处理
 - Dex-数据可视化
@@ -44,7 +44,8 @@
 ###配置
 
 - 在src/main/resources/db.properties配置数据库信息
-- 在src/main/resources/spring-quartz-task.xml配置作业调度信息 
+- 在src/main/resources/spring-quartz-task.xml配置作业调度信息
+- 在src/main/resources/redis.properties中配置redis服务器所在地址和认证
 
 ###运行
 
@@ -74,8 +75,7 @@
 
 ###详情
 <br>
-<br>
-####关于Java和Scala代码同时编译，以及spring mvc集成Scala问题，2016-11-06日完成,如下图，详细信息会在后面写出：
+####1.关于Java和Scala代码同时编译，以及spring mvc集成Scala问题，2016-11-06日完成,如下图，详细信息会在后面写出：
 
 ![](https://github.com/silence940109/Java/blob/master/SpringMVC_Scala/image/index.png)
 
@@ -117,14 +117,14 @@ Scala Service
 	}
 
 <br>
-<br>
-####关于Gretty插件配置热部署方案，请看[这里](https://github.com/silence940109/Java/blob/master/Gradle_Gretty)
+
+####2.关于Gretty插件配置热部署方案，请看[这里](https://github.com/silence940109/Java/blob/master/Gradle_Gretty)
 
 ![](https://github.com/silence940109/Java/blob/master/Gradle_Gretty/image/1.png)
 
 <br>
 <br>
-####关于Alibaba Druid数据源监控配置
+####3.关于Alibaba Druid数据源监控配置
 关于Alibaba Druid数据源监控配置的信息详情，可以看
 
 在web.xml中配置druid入口的用户名和密码，用户名和密码都配为druid
@@ -138,8 +138,7 @@ Scala Service
 ![](https://github.com/silence940109/Java/blob/master/Alibaba_Druid/2.png)
 
 <br>
-<br>
-####关于Swagger UI API测试
+####4.关于Swagger UI API测试
 系统已经集成了swagger，关于spring如何集成和配置swagger，请看[这里](https://github.com/silence940109/Java/tree/master/swagger)
 
 服务器运行起来后，你可以在浏览器中打开`http://localhost:8080/SSM/swagger/index.html`
@@ -151,8 +150,7 @@ Scala Service
 ![](https://github.com/silence940109/Java/blob/master/swagger/image/swagger-request.png)
 
 <br>
-<br>
-###关于Mybatis Generator自动生成配置文件,[具体配置过程](https://github.com/silence940109/Mybatis)
+###5.关于Mybatis Generator自动生成配置文件,[具体配置过程](https://github.com/silence940109/Mybatis)
 在/src/resources/generatorConfig.xml文件中
 
 1.修改数据库驱动本地路径
@@ -183,3 +181,7 @@ Scala Service
 4.执行以下命令生成
 
 	gradle test
+
+<br>
+
+###6.关于使用Gradle进行Spring单元测试
