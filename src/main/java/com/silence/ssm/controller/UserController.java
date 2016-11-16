@@ -1,5 +1,7 @@
 package com.silence.ssm.controller;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -36,7 +38,7 @@ public class UserController {
 			@ApiParam(required = true, name = "image", value = "照片") @RequestParam(value = "image") String image,
 			@ApiParam(required = true, name = "info", value = "其他信息") @RequestParam(value = "info") String info,
 			HttpServletRequest request) {
-		userService.addUser(new User(username, password, phone, image, info));
+		userService.addUser(new User(username, password, phone, image, info, new Date()));
 		return "Add SuccessFul";
 	}
 	

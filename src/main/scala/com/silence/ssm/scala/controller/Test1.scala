@@ -10,17 +10,19 @@ import com.wordnik.swagger.annotations.ApiOperation
 import com.silence.ssm.scala.service.ScalaTestService
 import com.wordnik.swagger.annotations.ApiParam
 import org.springframework.beans.factory.annotation.Autowired
+import com.silence.ssm.service.UserService
 
 @Api(value = "ScalaController", description = "测试scala")
 @Controller
 @RequestMapping(value=Array {"/scala"})
-class Test1 @Autowired()(scalaTestService:ScalaTestService){
+class Test1 @Autowired()(scalaTestService:ScalaTestService,userService:UserService){
   
   @ResponseBody
   @ApiOperation(value = "测试Scala1", httpMethod = "GET", notes = "testScala1")
   @RequestMapping(value=Array{"/test1"},method=Array{RequestMethod.GET})
   def test1(@ApiParam(required = true, name = "name", value = "用户姓名") @RequestParam(value = "name") name:String):String = {
      println(scalaTestService.execute("value"))
+     println(userService.findUserById(2))
     "this is scala controller test"
   }
   
@@ -35,8 +37,16 @@ class Test1 @Autowired()(scalaTestService:ScalaTestService){
   @ResponseBody
   @ApiOperation(value = "测试Scala3", httpMethod = "DELETE", notes = "testScala3")
   @RequestMapping(value=Array{"/test3"},method=Array{RequestMethod.DELETE})
-  def test3(@ApiParam(required = true, name = "name", value = "用户姓名") @RequestParam(value = "name") name:String):String = {
-     println(scalaTestService.execute("value"))
+  def test3(@ApiParam(required = true, name = "id", value = "用户id") @RequestParam(value = "id") id:Int):String = {
+     println(scalaTestService.execute(id+""))
+    "this is scala controller test"
+  }
+   
+  @ResponseBody
+  @ApiOperation(value = "scala userService", httpMethod = "GET", notes = "test userService in scala")
+  @RequestMapping(value=Array{"/getUserById"},method=Array{RequestMethod.GET})
+  def getUserById(@ApiParam(required = true, name = "id", value = "用户id") @RequestParam(value = "id") id:Int):String = {
+     println(scalaTestService.execute(id+""))
     "this is scala controller test"
   }
     
