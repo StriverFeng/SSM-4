@@ -81,6 +81,7 @@
 
 spring mvc和scala集成测试代码
 
+Scala Controller
 ```Java
 	@Api(value = "testScalaController", description = "测试scala")
 	@Controller
@@ -107,7 +108,6 @@ Scala Service
 	}
 ```
 <br>
-
 ####2.关于Gretty插件配置热部署方案，请看[这里](https://github.com/silence940109/Java/blob/master/Gradle_Gretty)
 
 ![](https://github.com/silence940109/Java/blob/master/Gradle_Gretty/image/1.png)
@@ -175,3 +175,4 @@ Scala Service
 <br>
 
 ###6.关于使用Gradle进行Spring单元测试
+
