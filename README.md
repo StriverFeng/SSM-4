@@ -143,18 +143,18 @@ Scala Service
 ###5.关于Mybatis Generator自动生成配置文件,[具体配置过程](https://github.com/silence940109/Mybatis)
 在/src/resources/generatorConfig.xml文件中
 
-1.修改数据库驱动本地路径
+(1).修改数据库驱动本地路径
 
 	<classPathEntry location="D:\mavenRepository\mysql\mysql-connector-java\5.1.30\mysql-connector-java-5.1.30.jar" />
 
-2.修改需要生成配置文件的数据库信息
+(2).修改需要生成配置文件的数据库信息
 
 	<jdbcConnection driverClass="com.mysql.jdbc.Driver"
 		connectionURL="jdbc:mysql://localhost:3306/ssm?characterEncoding=utf8"
 		userId="root" password="root">
 	</jdbcConnection>
 
-3.需要生成哪些表的配置信息
+(3).需要生成哪些表的配置信息
 
 	<!-- 要对那些数据表进行生成操作，必须要有一个. -->
 	<table schema="mybatis" tableName="article" domainObjectName="Article"
@@ -168,11 +168,25 @@ Scala Service
 		selectByExampleQueryId="false">
 	</table>
 
-4.执行以下命令生成
+(4).执行以下命令生成
 
-	gradle test
+	gradle -Dtest.singlg=GeneratorMybatis test
 
 <br>
 
-###6.关于使用Gradle进行Spring单元测试
+###6.[关于使用Gradle进行Spring单元测试](https://github.com/silence940109/Java/tree/master/Gradle_Test)
+
+(1).执行单元测试
+
+![](https://github.com/silence940109/Java/blob/master/Gradle_Test/image/2.png)
+
+在项目的根目录下/build/reports/tests/test/index.html下查看单元测试的概要
+
+(2).错误，不通过
+
+![](https://github.com/silence940109/Java/blob/master/Gradle_Test/image/1.png)
+
+(3).通过
+
+![](https://github.com/silence940109/Java/blob/master/Gradle_Test/image/3.png)
 
