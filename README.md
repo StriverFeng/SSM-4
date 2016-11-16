@@ -81,15 +81,8 @@
 
 spring mvc和scala集成测试代码
 
-	import org.springframework.stereotype.Controller
-	import org.springframework.web.bind.annotation.RequestMapping
-	import org.springframework.web.bind.annotation.RequestMethod
-	import com.wordnik.swagger.annotations.Api
-	import org.springframework.web.bind.annotation.ResponseBody
-	import com.wordnik.swagger.annotations.ApiOperation
-	import com.silence.ssm.scala.service.ScalaTestService
-	import com.wordnik.swagger.annotations.ApiParam
-	import org.springframework.beans.factory.annotation.Autowired
+```Java
+
 	@Api(value = "testScalaController", description = "测试scala")
 	@Controller
 	@RequestMapping(value=Array {"/testScalaController"})
@@ -103,11 +96,11 @@ spring mvc和scala集成测试代码
 	    "this is scala controller test"
 	  }
 	}
+```
 
 Scala Service
 
-	import org.springframework.stereotype.Service
-	
+```Java	
 	@Service("scalaTestService")
 	class ScalaTestService {
 	  
@@ -115,6 +108,7 @@ Scala Service
 	     "Scala test service module return data" 
 	  }
 	}
+```
 
 <br>
 
