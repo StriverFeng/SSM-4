@@ -15,7 +15,6 @@
 - SpringMVC4.25 > finished > 2016-10-25
 - MyBatis3.3.0 > finished > 2016-11-13
 - Mybatis Generator > 自动生成配置文件 > finished > 2016-11-13
-- Freemarker
 - Druid数据库连接池(连接池监控) > [Spring Druid](https://github.com/silence940109/Java/tree/master/Alibaba_Druid) > finished > 2016-10-26
 - Quartz2.1 > Job Schedule > finished > 2016-10-27
 - Lucene6.2.1全文信息检索
@@ -23,7 +22,7 @@
 - Redis客户端开发包Jedis > finished > 2016-11-12
 - Ehcache
 - sf4j日志->log4j日志引擎 > finished > 2016-10-20
-- Gradle Spring Junit单元测试
+- Gradle Spring Junit单元测试 > finished > 2016-11-18
 - Strman-java字符处理
 - Tablesaw-伪“大数据”处理
 - Dex-数据可视化
@@ -189,4 +188,3 @@ Scala Service
 (3).通过
 
 ![](https://github.com/silence940109/Java/blob/master/Gradle_Test/image/3.png)
-
