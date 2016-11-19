@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.Date;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -18,7 +19,9 @@ public class SpringJunitTest {
 
 	@Autowired private UserService userService;
 	
+	@Test
 	public void test() {
 		int result = userService.addUser(new User("打哈", "nishifdfd", "1567989708", "/upload/tesdf.ong", "test", new Date()));
+		assertEquals(1, result);
 	}
 }
