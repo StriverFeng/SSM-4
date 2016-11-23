@@ -18,12 +18,11 @@ import com.silence.ssm.service.UserService
 class Test1 @Autowired()(scalaTestService:ScalaTestService,userService:UserService){
   
   @ResponseBody
-  @ApiOperation(value = "测试Scala1", httpMethod = "GET", notes = "testScala1")
-  @RequestMapping(value=Array{"/test1"},method=Array{RequestMethod.GET})
-  def test1(@ApiParam(required = true, name = "name", value = "用户姓名") @RequestParam(value = "name") name:String):String = {
-     println(scalaTestService.execute("value"))
-     println(userService.findUserById(2))
-    "this is scala controller test"
+  @ApiOperation(value = "scalaWordCount", httpMethod = "POST", notes = "scalaWordCount")
+  @RequestMapping(value=Array{"/scalaWordCount"},method=Array{RequestMethod.POST})
+  def scalaWorkCount(@ApiParam(required = true, name = "line", value = "给定的字符串") @RequestParam(value = "line") line:String,
+      @ApiParam(required = true, name = "pattern", value = "分隔符") @RequestParam(value = "pattern") pattern:String):String = {
+    scalaTestService.wordcount(line, pattern)
   }
   
   @ResponseBody
