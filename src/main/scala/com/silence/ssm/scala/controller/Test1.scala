@@ -18,7 +18,7 @@ import com.silence.ssm.service.UserService
 class Test1 @Autowired()(scalaTestService:ScalaTestService,userService:UserService){
   
   @ResponseBody
-  @ApiOperation(value = "scalaWordCount", httpMethod = "POST", notes = "scalaWordCount")
+  @ApiOperation(value = "Scala实现单词统计", httpMethod = "POST", notes = "scalaWordCount")
   @RequestMapping(value=Array{"/scalaWordCount"},method=Array{RequestMethod.POST})
   def scalaWorkCount(@ApiParam(required = true, name = "line", value = "给定的字符串") @RequestParam(value = "line") line:String,
       @ApiParam(required = true, name = "pattern", value = "分隔符") @RequestParam(value = "pattern") pattern:String):String = {

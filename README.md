@@ -82,27 +82,48 @@ spring mvc和scala集成测试代码
 
 Scala Controller
 ```Java
-	@Api(value = "testScalaController", description = "测试scala")
+	@Api(value = "ScalaController", description = "测试scala")
 	@Controller
-	@RequestMapping(value=Array {"/testScalaController"})
-	class Test1 @Autowired()(scalaTestService:ScalaTestService){
+	@RequestMapping(value=Array {"/scala"})
+	class Test1 @Autowired()(scalaTestService:ScalaTestService,userService:UserService){
 	  
 	  @ResponseBody
-	  @RequestMapping(value=Array {"test"},method=Array{RequestMethod.GET})
-	  @ApiOperation(value = "测试Scala", httpMethod = "GET", notes = "test Scala")
-	  def testScalaController():String = {
-	    println("this is scala controller test")
+	  @ApiOperation(value = "Scala实现单词统计", httpMethod = "POST", notes = "scalaWordCount")
+	  @RequestMapping(value=Array{"/scalaWordCount"},method=Array{RequestMethod.POST})
+	  def scalaWorkCount(@ApiParam(required = true, name = "line", value = "给定的字符串") @RequestParam(value = "line") line:String,
+	      @ApiParam(required = true, name = "pattern", value = "分隔符") @RequestParam(value = "pattern") pattern:String):String = {
+	    scalaTestService.wordcount(line, pattern)
+	  }
+	  
+	  @ResponseBody
+	  @ApiOperation(value = "测试Scala2", httpMethod = "POST", notes = "testScala2")
+	  @RequestMapping(value=Array{"/test2"},method=Array{RequestMethod.POST})
+	  def test2(@ApiParam(required = true, name = "name", value = "用户姓名") @RequestParam(value = "name") name:String):String = {
+	     println(scalaTestService.execute("value"))
 	    "this is scala controller test"
 	  }
-	}
 ```
 Scala Service
 ```Java	
 	@Service("scalaTestService")
 	class ScalaTestService {
-	  
-	  def execute(name:String) : String = {
-	     "Scala test service module return data" 
+	
+	  def execute(name: String): String = {
+	    "Scala test service module return data"
+	  }
+	
+	  def wordcount(line:String, pattern:String): String = {
+	    //原始map
+	    val map = line.split(pattern)
+	      .foldLeft(Map.empty[String, Int]) {
+	        (count, word) => count + (word -> (count.getOrElse(word, 0) + 1))
+	      }
+	    val sortmap = map
+	      .toList //转成List排序
+	      //.filter(_._2 > 1) //过滤出数量大于指定数目的数据，这里是1
+	      .sortWith(_._2 > _._2); //根据value值进行降序排序,( 降序（_._2 > _._2）升序(_._2 < _._2) )
+	    for (pair <- sortmap) println(pair) //遍历Map，输出每一个kv对
+	    sortmap.toString()
 	  }
 	}
 ```
