@@ -7,6 +7,8 @@
 - Spring 4.25 Integration > finished > 2016-10-23
 - Spring Session
 - Spring Security
+- Message Queue
+- [JWT](https://github.com/auth0/java-jwt) > Web API Security
 - Scala 2.1 > Scala Java Compile At The Same Time > finished > 2016-11-06
 - Spark 2.0.0 > 服务器平台搭建 > finished > 2016-11-04
 - Spring-Aspects Transaction > finished > 2016-11-13
@@ -23,7 +25,6 @@
 - Ehcache
 - sf4j日志->log4j日志引擎 > finished > 2016-10-20
 - Gradle Spring Junit单元测试 > finished > 2016-11-18
-- Strman-java字符处理
 - Tablesaw-伪“大数据”处理
 - Dex-数据可视化
 - Swagger > API文档 > RESTFUL API TEST > finished 2016-11-03
